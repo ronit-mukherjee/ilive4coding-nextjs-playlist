@@ -12,6 +12,7 @@ export default function Post({ postData }) {
 
   return (
     <div>
+      <img src={"/images/posts/" + postData.id + ".jpeg"} />
       <h2>{postData.title}</h2>
       <p>{postData.body}</p>
     </div>

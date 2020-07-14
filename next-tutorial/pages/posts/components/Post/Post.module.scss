@@ -1,8 +1,18 @@
 .postHeading {
   font-size: 18px;
-  margin-top: 60px;
+  margin-top: 20px;
 }
 
 .postLink {
   color: #333;
+
+  &:hover {
+    color: red;
+  }
+}
+
+.postImage {
+  width: 100%;
+  min-height: 200px;
+  height: auto;
 }
