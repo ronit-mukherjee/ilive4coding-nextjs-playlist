@@ -9,6 +9,7 @@ export default function Posts({ posts }) {
       {posts.map((post) => {
         return (
           <li key={post.id} className={"col-md-3 " + styles.post}>
+            {process.env.NEXT_PUBLIC_API_BASE_URL}
             <Post {...post} />
           </li>
         );
@@ -18,7 +19,9 @@ export default function Posts({ posts }) {
 }
 
 export async function getStaticProps() {
-  const res = await fetch("https://jsonplaceholder.typicode.com/posts");
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_API_BASE_URL}${process.env.POST_URL}`
+  );
   const posts = await res.json();
 
   return {
