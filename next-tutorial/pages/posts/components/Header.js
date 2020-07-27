@@ -1,5 +1,5 @@
 import React from "react";
 
-export function PostHeader() {
+export default function PostHeader() {
   return <h2>Latest Posts</h2>;
 }

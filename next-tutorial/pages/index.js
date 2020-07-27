@@ -1,7 +1,12 @@
+import { useEffect } from "react";
 import Head from "next/head";
 import Link from "next/link";
+import Router from "next/router";
 
 export default function Home() {
+  useEffect(() => {
+    Router.prefetch("/posts");
+  }, []);
   return (
     <div className="container">
       <Head>
@@ -20,11 +25,9 @@ export default function Home() {
         </p>
 
         <div className="grid">
-          <Link href="/posts">
-            <a className="card">
-              <h3>Posts &rarr;</h3>
-            </a>
-          </Link>
+          <a className="card" onClick={() => Router.push("/posts")}>
+            <h3>Posts &rarr;</h3>
+          </a>
 
           <Link href="/store">
             <a className="card">

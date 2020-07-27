@@ -2,7 +2,7 @@ import React from "react";
 import { useRouter } from "next/router";
 export default function Dukaan() {
   const router = useRouter();
-  console.log(router.query);
+  console.log(router);
   if (!router.query || !router.query.store) {
     return null;
   }
