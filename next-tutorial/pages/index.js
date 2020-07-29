@@ -29,6 +29,12 @@ export default function Home() {
             <h3>Posts &rarr;</h3>
           </a>
 
+          <Link href="/posts/[id]" as="/posts/1">
+            <a className="card">
+              <h3>Post 1 &rarr;</h3>
+            </a>
+          </Link>
+
           <Link href="/store">
             <a className="card">
               <h3>Store &rarr;</h3>

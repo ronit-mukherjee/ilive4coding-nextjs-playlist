@@ -21,9 +21,14 @@ const PostLink = styled.a`
 export default function Post({ id, title, body }) {
   return (
     <>
-      <img src={"/images/posts/" + id + ".jpeg"} className={styles.postImage} />
+      <Link href="/posts/[id]" as={"/posts/" + id}>
+        <img
+          src={"/images/posts/" + id + ".jpeg"}
+          className={styles.postImage}
+        />
+      </Link>
       <StyledH3>
-        <Link href="/posts/[id]" as={"/posts/" + id}>
+        <Link href="/posts/[id]" as={"/posts/" + id} passHref replace>
           <PostLink>{title}</PostLink>
         </Link>
       </StyledH3>
