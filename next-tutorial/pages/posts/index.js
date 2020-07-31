@@ -4,6 +4,7 @@ import dynamic from "next/dynamic";
 import Post from "./components/Post/Post";
 
 import styles from "./posts.module.scss";
+import Head from "next/head";
 const Header = dynamic(() => import("./components/Header"), {
   loading: () => <p>Loading Header...</p>,
   ssr: false,
@@ -13,6 +14,9 @@ const Header = dynamic(() => import("./components/Header"), {
 export default function Posts({ posts }) {
   return (
     <>
+      <Head>
+        <title>Posts Page</title>
+      </Head>
       <Header />
       <ul className="row">
         {posts.map((post) => {

@@ -1,5 +1,7 @@
 import React from "react";
 import { useRouter } from "next/router";
+import Head from "next/head";
+import { NextSeo } from "next-seo";
 
 export default function Post({ postData }) {
   const router = useRouter();
@@ -12,6 +14,13 @@ export default function Post({ postData }) {
 
   return (
     <div>
+      <NextSeo
+        title={postData.title}
+        description="A short description goes here."
+      />
+      {/* <Head>
+        <title>{postData.title}</title>
+      </Head> */}
       <img src={"/images/posts/" + postData.id + ".jpeg"} />
       <h2>{postData.title}</h2>
       <p>{postData.body}</p>
